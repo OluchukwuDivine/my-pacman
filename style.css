@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center; 
+}
+.pacman {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(240, 201, 29);
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+.eye{
+    width: 8px;
+    height: 8px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 18px;
+    right: 30px;
+}
+.mouth{
+    width: 30px;
+    height: 55px;
+    background: white;
+    transform: rotate(-95deg);
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    animation: eat 0.3s infinite linear;
+}
+
+@keyframes eat {
+    from{
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+    to {
+        clip-path: polygon(50% 0%, 0% 100%, 0% 100%);
+    }
+}
